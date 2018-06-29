@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ "$1" != "" ]; then
+    viewDir="resources/views/$1"
+    if [ -d "$viewDir" ]; then
+        echo View already exists!
+    else
+        mkdir "resources/views/$1"
+        > "${viewDir}/index.blade.php"
+        echo View created successfully.
+        PascalCaseName=${1^}
+        option=""
+        if [ "$2" == "resource" ]; then
+            option="--resource"
+        fi
+        php artisan make:controller ${PascalCaseName}Controller ${option}
+    fi 
+fi

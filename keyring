@@ -1,0 +1,38 @@
+#!/usr/bin/env python2
+
+# sudo apt-get install python-gnomekeyring
+import gnomekeyring
+import getpass
+
+
+def requestPassword():
+    keyringPassword = getpass.getpass('Enter Master\'s Password:')
+    try:
+        gnomekeyring.unlock_sync(None, keyringPassword)
+        return True, keyringPassword
+    except gnomekeyring.IOError:
+        print 'Try again!'
+        return False, ''
+
+
+try:
+    CorrectPassword = False, ''
+    while not CorrectPassword[0]:
+            CorrectPassword = requestPassword()
+
+    print 'Welcome!'
+
+    gitstr = (
+        'machine github.com\n' +
+        'login searleser97\n' +
+        'password ' + CorrectPassword[1] + '97\n' +
+        '\n' +
+        'machine api.github.com\n' +
+        'login searleser97\n' +
+        'password ' + CorrectPassword[1] + '97\n'
+    )
+
+    with open("/home/san/.netrc", "w") as text_file:
+        text_file.write(gitstr)
+except KeyboardInterrupt:
+    print ''

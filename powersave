@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo cpufreq-set -g powersave

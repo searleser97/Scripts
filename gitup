@@ -1,0 +1,15 @@
+#!/bin/bash
+git add .
+
+# now="$(date +'%d/%m/%Y') $(date +'%r')"
+now="$(date +'%d/%m/%Y %r')"
+
+if [ "$1" != "" ]; then
+	echo $1
+    git commit -m "$1"
+else
+	echo "updated: $now"
+    git commit -m "updated: $now"
+fi
+
+git push origin master

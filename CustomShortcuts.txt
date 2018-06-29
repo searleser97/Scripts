@@ -1,0 +1,7 @@
+----------------------------------------------------------
+|   NAME   |             COMMAND            |  SHORTCUT  |
+|---------------------------------------------------------
+| nautilus | nautilus                       |  Super + E |
+| poweroff | gnome-session-quit --power-off |  Alt + F3  |
+| logout   | gnome-session-quit --logout    |  Alt + F5  |
+----------------------------------------------------------

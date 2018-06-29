@@ -1,0 +1,2 @@
+#!/bin/bash
+gvfs-mount -d /dev/sda2
