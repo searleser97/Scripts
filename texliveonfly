@@ -3,7 +3,7 @@
 # default options; feel free to change!
 defaultCompiler = "pdflatex"
 # defaultArguments = "-synctex=1 -interaction=nonstopmode"
-defaultArguments = "-shell-escape -output-directory output"
+defaultArguments = "-shell-escape"
 defaultSpeechSetting = "never"
 
 #
