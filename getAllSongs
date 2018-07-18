@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+from shutil import copyfile
+from os import listdir
+from os.path import isfile, isdir
+
+
+def main():
+    # rootPath = 'C:/HomeW/Music'  # input()
+    rootPath = '/home/san/Music'
+    rootPath.replace('\\', '/')
+    if rootPath[len(rootPath) - 1] != '/':
+        rootPath = rootPath + '/'
+    print(rootPath)
+    directories = [name for name in listdir(rootPath) if isdir(rootPath + name)]
+    for directory in directories:
+        if directory == 'AllSongs':
+            continue
+        dirPath = rootPath + directory + '/'
+        files = [f for f in listdir(dirPath) if isfile(dirPath + f)]
+        for file in files:
+            filePath = dirPath + file
+            print('filepath', filePath)
+            print(rootPath + 'AllSongs')
+            copyfile(filePath, rootPath + 'AllSongs/' + file)
+
+
+if __name__ == '__main__':
+    main()

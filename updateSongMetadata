@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+from os import listdir
+from os.path import isfile, isdir
+from mutagen.easyid3 import EasyID3
+from mutagen.mp4 import MP4
+# from mutagen.id3 import ID3, APIC
+
+
+def getLastDotPos(fileName):
+    lastDotPos = -1
+    for i in range(len(fileName)):
+        if fileName[i] == '.':
+            lastDotPos = i
+    return lastDotPos
+
+
+def main():
+    # rootPath = 'C:/HomeW/Music'  # input()
+    rootPath = '/home/san/Music'
+    rootPath.replace('\\', '/')
+    if rootPath[len(rootPath) - 1] != '/':
+        rootPath = rootPath + '/'
+    print(rootPath)
+    directories = [name for name in listdir(rootPath) if isdir(rootPath + name)]
+    for directory in directories:
+        if directory == 'AllSongs':
+            continue
+        dirPath = rootPath + directory + '/'
+        files = [f for f in listdir(dirPath) if isfile(dirPath + f)]
+        for file in files:
+            filePath = dirPath + file
+            print(directory, file)
+            lastDotPos = getLastDotPos(file)
+            name = file[:lastDotPos]
+            extension = file[lastDotPos + 1:]
+            if extension.lower() == 'mp3':
+                song = EasyID3(filePath)
+                song['title'] = name
+                song['artist'] = directory
+                song['album'] = ''
+                song.save()
+                '''
+                song = ID3(filePath)
+                with open(rootPath + 'albumArt.jpg', 'rb') as cover:
+                    song['APIC'] = APIC(
+                        encoding=3,
+                        mime='image/jpg',
+                        type=3,
+                        desc=u'Cover',
+                        data=cover.read())
+                song.save()
+                '''
+            if extension.lower() == 'm4a':
+                song = MP4(filePath)
+                song.tags['\xa9nam'] = name
+                song.tags['\xa9ART'] = directory
+                song.tags['\xa9alb'] = ''
+                song.save()
+
+
+if __name__ == '__main__':
+    main()

@@ -1,7 +1,9 @@
 #!/bin/bash
 
-mkdir out
-cp *.* out/
+mkdir -p out
+rm -f *.pdf
 cd out
+cp ../*.* ./
 texliveonfly $1
 cp *.pdf ../
+gio open ../*.pdf
