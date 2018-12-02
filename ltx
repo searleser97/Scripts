@@ -5,6 +5,7 @@ mkdir -p out
 cd out
 cp ../*.* ./
 lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error $1
+lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error $1
 cp *.pdf ../
 if [ "$2" == "-o" ]; then
 	gio open ../*.pdf
