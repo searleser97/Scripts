@@ -1,8 +1,7 @@
 #!/bin/bash
 
-rm -f out
+rm -rf out
 mkdir -p out
-rm -f *.pdf
 cd out
 cp ../*.* ./
 lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error $1
