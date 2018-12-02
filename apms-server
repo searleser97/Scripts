@@ -1,0 +1,3 @@
+#!/bin/bash
+cd "/home/san/grive/ESCOM/Ing. Software/SEPROYECT/APMS-Server"
+spring run

@@ -2,4 +2,4 @@
 
 cd /home/san/grive/Algorithms/Reference/ReferenceBook
 
-ltx Reference.tex
+ltx Reference.tex -o

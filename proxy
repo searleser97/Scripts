@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo /home/san/ProgramFiles/Scripts/proxy.py

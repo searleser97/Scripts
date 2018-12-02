@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo ssh -i '/home/san/CODE/Mining/private.pem' linux@$1

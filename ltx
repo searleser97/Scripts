@@ -1,9 +1,13 @@
 #!/bin/bash
 
+rm -f out
 mkdir -p out
 rm -f *.pdf
 cd out
 cp ../*.* ./
-texliveonfly $1
+lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error $1
 cp *.pdf ../
-gio open ../*.pdf
+if [ "$2" == "-o" ]; then
+	gio open ../*.pdf
+fi
+

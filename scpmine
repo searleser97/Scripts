@@ -1,0 +1,5 @@
+#!/bin/bash
+# 1 = directory
+# 2 = ip
+# 3 = server directory
+sudo scp -i '/home/san/CODE/Mining/private.pem' -r $1 linux@$2:$3

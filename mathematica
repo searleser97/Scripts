@@ -1,0 +1,1 @@
+/home/san/ProgramFiles/Mathematica/11.3/Executables/mathematica

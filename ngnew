@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ng new $1 --routing

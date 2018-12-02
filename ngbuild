@@ -1,0 +1,4 @@
+#!/bin/bash
+#example1: ngbuild /
+#example2: ngbuild https://collinL34.github.io/scotch-github-pages/
+ng build --prod --build-optimizer --output-path public --base-href $1
