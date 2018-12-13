@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /home/san/grive/Algorithms/Reference/ReferenceBook
+cd /home/san/Algorithms/Reference/ReferenceBook
 ltx Reference.tex -o

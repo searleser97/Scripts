@@ -1,4 +1,4 @@
 #!/bin/bash
-cp /home/san/.profile /home/san/ProgramFiles/myUbuntuScripts/profile
-cp /home/san/.bashrc /home/san/ProgramFiles/myUbuntuScripts/bashrc
+cp /home/san/.profile /home/san/ProgramFiles/Scripts/profile
+cp /home/san/.bashrc /home/san/ProgramFiles/Scripts/bashrc
 gitup
