@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd /home/san/Algorithms/Reference/ReferenceBook
-ltx Reference.tex -o
+ltx Reference $1
