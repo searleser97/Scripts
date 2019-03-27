@@ -1,3 +1,5 @@
 #!/bin/bash
 
-ng serve --host=$(hostname -i)
+ipArray=($(hostname -i))
+
+ng serve --host=${ipArray[0]}
