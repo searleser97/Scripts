@@ -6,7 +6,10 @@ rm *.aux
 rm *.log
 rm *.out
 rm *.toc
+rm latex.py
 rm *.synctex.gz
+rm *.py.out
+rm *.py.err
 if [ "$2" == "-o" ]; then
-	gio open ../$(echo "$1" | cut -d'.' -f 1).pdf
+	gio open $(echo "$1" | cut -d'.' -f 1).pdf
 fi
