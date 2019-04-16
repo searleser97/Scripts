@@ -1,13 +1,12 @@
 #!/bin/bash
 
-rm -rf out
-mkdir -p out
-cd out
-cp ../*.* ./
-lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error $1
-lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error $1
-cp *.pdf ../
+lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+rm *.aux
+rm *.log
+rm *.out
+rm *.toc
+rm *.synctex.gz
 if [ "$2" == "-o" ]; then
 	gio open ../$(echo "$1" | cut -d'.' -f 1).pdf
 fi
-
