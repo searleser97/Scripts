@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd "/home/san/Videos/Courses/EDX/Data Science/Notes"
+if [ "$1" == "-v" ]; then
+	gio open Notes.pdf
+else
+	Rscript rtotex.R
+	ltx Notes.tex $1
+fi
