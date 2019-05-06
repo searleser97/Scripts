@@ -1,15 +1,19 @@
 #!/bin/bash
 
-/usr/bin/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
-/usr/bin/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
-rm *.aux
-rm *.log
-rm *.out
-rm *.toc
-rm latex.py
-rm *.synctex.gz
-rm *.py.out
-rm *.py.err
-if [ "$2" == "-o" ]; then
-	gio open $(echo "$1" | cut -d'.' -f 1).pdf
+if [ "$1" == "-i" ]; then
+	tllocalmgr install $2
+	sudo texhash
+elif [ "$1" == "-o" ]; then
+	gio open $(echo "$2" | cut -d'.' -f 1).pdf
+else
+	/usr/bin/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+	/usr/bin/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+	rm *.aux
+	rm *.log
+	rm *.out
+	rm *.toc
+	rm latex.py
+	rm *.synctex.gz
+	rm *.py.out
+	rm *.py.err
 fi
