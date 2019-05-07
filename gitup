@@ -3,15 +3,15 @@ git pull
 
 git add .
 
-# now="$(date +'%d/%m/%Y') $(date +'%r')"
-now="$(date +'%d/%m/%Y %r')"
+datetime="$(date +'%r')"
+date="$(date +'%m/%d/%Y')"
 
 if [ "$1" != "" ]; then
 	echo $1
     git commit -m "$1"
 else
-	echo "updated: $now"
-    git commit -m "updated: $now"
+	echo "updated on $date at $datetime"
+    git commit -m "updated on $date at $datetime"
 fi
 
 git push
