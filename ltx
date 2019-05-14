@@ -16,4 +16,5 @@ else
 	rm *.synctex.gz
 	rm *.py.out
 	rm *.py.err
+	rm $(echo "$1" | cut -d'.' -f 1).py
 fi
