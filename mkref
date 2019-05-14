@@ -1,8 +1,5 @@
 #!/bin/bash
 
 cd /home/san/Algorithms/Reference/ReferenceBook
-if [ "$1" == "-v" ]; then
-	gio open Reference.pdf
-else
-	ltx Reference.tex $1
-fi
+
+ltx Reference.tex $1
