@@ -2,4 +2,4 @@
 
 cd /home/san/Algorithms/Reference/ReferenceBook
 
-ltx Reference.tex $1
+python mkref.py $1

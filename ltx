@@ -6,8 +6,8 @@ if [ "$1" == "-i" ]; then
 elif [ "$2" == "-o" ]; then
 	gio open $(echo "$1" | cut -d'.' -f 1).pdf
 else
-	/usr/bin/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
-	/usr/bin/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+	/opt/texlive/2019/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+	/opt/texlive/2019/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
 	rm *.aux
 	rm *.log
 	rm *.out
@@ -16,7 +16,7 @@ else
 	rm *.synctex.gz
 	rm *.py.out
 	rm *.py.err
-	rm $(echo "$1" | cut -d'.' -f 1).py
+	# rm $(echo "$1" | cut -d'.' -f 1).py
 
 	if [ "$2" == "-co" ]; then
 		gio open $(echo "$1" | cut -d'.' -f 1).pdf

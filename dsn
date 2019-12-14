@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd "/home/san/Videos/Courses/EDX/Data Science/Notes"
+cd "/home/san/Projects/data-science-notes"
 
-Rscript rtotex.R
+if [ "$1" == "" ]; then
+	Rscript rtotex.R
+fi
 ltx Notes.tex $1
