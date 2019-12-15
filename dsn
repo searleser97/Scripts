@@ -1,8 +1,9 @@
 #!/bin/bash
 
-cd "/home/san/Projects/data-science-notes"
+cd /home/san/Projects/data-science-notes/Notes
 
 if [ "$1" == "" ]; then
-	Rscript rtotex.R
+	rtotex Notes.Rnw
 fi
+
 ltx Notes.tex $1
