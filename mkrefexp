@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /home/san/Algorithms/ReferenceExplained/ReferenceExplainedBook
+
+python mkrefexp.py $1
