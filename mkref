@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cd /home/san/Algo/competitive-programming-reference
+cd /home/san/Projects/competitive-programming-reference
 
-python mkcpr.py
+mkcpr
 
 cd PDF
 
