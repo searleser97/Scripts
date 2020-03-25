@@ -2,7 +2,7 @@
 
 cd /home/san/Algo/competitive-programming-reference
 
-python getLaTex.py
+python mkcpr.py
 
 cd PDF
 
