@@ -1,5 +1,9 @@
 #!/bin/bash
 
-cd /home/san/Algorithms/Reference/ReferenceBook
+cd /home/san/Algo/competitive-programming-reference
 
-python mkref.py $1
+python getLaTex.py
+
+cd PDF
+
+ltx Reference.tex $1
