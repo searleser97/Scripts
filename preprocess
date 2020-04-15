@@ -1,0 +1,4 @@
+#!/bin/bash
+
+g++ -P -E -nostdinc "$1" > prep.cpp
+echo -e "#include <bits/stdc++.h>\n$(cat prep.cpp)" > prep.cpp
