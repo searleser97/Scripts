@@ -1,0 +1,4 @@
+#!/bin/bash
+
+g++ -P -E -nostdinc "$1" > prep.cpp
+sed -i '1i #include <bits/stdc++.h>' prep.cpp
