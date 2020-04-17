@@ -1,3 +1,3 @@
 #!/bin/bash
 
-g++ -std=c++14 -g -o a "$1" -O3 -fsanitize=signed-integer-overflow -fsanitize=bounds-strict -fsanitize=integer-divide-by-zero -fsanitize=float-divide-by-zero -fsanitize=pointer-overflow -Wshadow -Wall -DLOCAL
+g++ -std=c++14 -g -o a "$1" -O3 -fsanitize=signed-integer-overflow -fsanitize=bounds-strict -fsanitize=address -fsanitize=integer-divide-by-zero -fsanitize=float-divide-by-zero -fsanitize=pointer-overflow -fsplit-stack -Wshadow -Wall -DLOCAL
