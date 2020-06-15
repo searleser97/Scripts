@@ -6,4 +6,4 @@ mkcpr
 
 cd PDF
 
-ltx Output.tex $1
+ltx Book.tex $1
