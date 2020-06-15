@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd /home/san/Projects/Algorithms-In-A-White-Box
+
+mkcpr
+
+cd PDF
+
+ltx Output.tex $1
