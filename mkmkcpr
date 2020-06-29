@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd /home/san/Projects/mkcpr
+
+rm -R dist
+
+poetry build
+
+pip uninstall mkcpr -y
+
+cd dist
+
+pip install mkcpr*.whl
+
+cd ..
