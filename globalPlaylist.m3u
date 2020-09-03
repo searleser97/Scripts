@@ -1,0 +1,10 @@
+.backup_proxy/env.txt
+.backup_proxy/bash.txt
+.git/index
+.git/COMMIT_EDITMSG
+.git/ORIG_HEAD
+.git/HEAD
+.git/config
+.git/description
+.git/packed-refs
+.git/FETCH_HEAD

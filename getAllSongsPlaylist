@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import os
+from os import listdir
+from os.path import isdir, isfile
+
+def main():
+    playlist = []
+    directories = [name for name in listdir('.') if isdir(name)]
+    for directory in directories:
+        if directory == 'AllSongs':
+            continue
+        files = [f for f in listdir(directory) if isfile(os.path.join(directory, f))]
+        for file in files:
+            filepath = os.path.join(directory, file)
+            playlist.append(filepath)
+
+    with open('globalPlaylist.m3u', 'w') as f:
+        playlist = "\n".join(playlist)
+        print(playlist)
+        f.write(playlist)
+
+
+if __name__ == '__main__':
+    main()

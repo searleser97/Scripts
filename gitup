@@ -14,4 +14,4 @@ else
     git commit -m "updated on $date at $datetime"
 fi
 
-git push
+git push origin $(git branch --show-current)
