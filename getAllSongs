@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 from shutil import copyfile
-from os import listdir
+from os import listdir, getcwd
 from os.path import isfile, isdir
 
+# todo: create AllSongs folder if not exists
 
 def main():
-    # rootPath = 'C:/HomeW/Music'  # input()
-    rootPath = '/home/san/Music'
+    rootPath = getcwd()
     rootPath.replace('\\', '/')
     if rootPath[len(rootPath) - 1] != '/':
         rootPath = rootPath + '/'

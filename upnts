@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /home/san/Projects/competitive-programming-notes
+python writeUrls.py
+gitup
+
