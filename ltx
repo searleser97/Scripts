@@ -9,7 +9,8 @@ else
 	/usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
   /usr/local/texlive/2020/bin/x86_64-linux/bibtex "$1"
 	/usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
-	rm *.aux
+	/usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+  rm *.aux
 	rm *.log
 	rm *.out
 	rm *.toc
