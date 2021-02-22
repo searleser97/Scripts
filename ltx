@@ -7,9 +7,11 @@ elif [ "$2" == "-o" ]; then
 	gio open $(echo "$1" | cut -d'.' -f 1).pdf
 else
 	/usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
-  /usr/local/texlive/2020/bin/x86_64-linux/bibtex "$1"
-	/usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
-	/usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+  if ["$2" == "-bib" ]; then
+    /usr/local/texlive/2020/bin/x86_64-linux/bibtex "$1"
+    /usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+  fi
+  /usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
   rm *.aux
 	rm *.log
 	rm *.out
