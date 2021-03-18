@@ -1,5 +1,4 @@
 #!/bin/bash
-git pull
 
 git add .
 
@@ -13,5 +12,7 @@ else
 	echo "updated on $date at $datetime"
     git commit -m "updated on $date at $datetime"
 fi
+
+git pull
 
 git push origin $(git branch --show-current)
