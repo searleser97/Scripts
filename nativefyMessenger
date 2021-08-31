@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nativefier https://www.messenger.com/ --tray --single-instance --user-agent "Mozilla/5.0 (Windows NT 10.0; rv:74.0) Gecko/20100101 Firefox/74.0" --inject nativefier_inject.js --widevine --internal-urls "https://.*"
+
