@@ -1,17 +1,20 @@
 #!/bin/bash
 
+compiler="pdflatex"
+#compiler="lualatex"
+
 if [ "$1" == "-i" ]; then
 	tllocalmgr install $2
 	sudo texhash
 elif [ "$2" == "-o" ]; then
 	gio open $(echo "$1" | cut -d'.' -f 1).pdf
 else
-	/usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+	/usr/local/texlive/2020/bin/x86_64-linux/$compiler -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
   if [ "$2" == "-bib" ]; then
     /usr/local/texlive/2020/bin/x86_64-linux/bibtex "$1"
-    /usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+    /usr/local/texlive/2020/bin/x86_64-linux/$compiler -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
   fi
-  /usr/local/texlive/2020/bin/x86_64-linux/lualatex -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
+  /usr/local/texlive/2020/bin/x86_64-linux/$compiler -shell-escape -interaction=nonstopmode -synctex=1 -file-line-error "$1"
   rm *.aux
 	rm *.log
 	rm *.out
@@ -20,9 +23,9 @@ else
 	rm *.synctex.gz
 	rm *.py.out
 	rm *.py.err
-  rm *.bbl
-  rm *.blg
-	# rm $(echo "$1" | cut -d'.' -f 1).py
+	rm *.bbl
+	rm *.blg
+	 #rm $(echo "$1" | cut -d'.' -f 1).py
 
 	if [ "$2" == "-co" ]; then
 		gio open $(echo "$1" | cut -d'.' -f 1).pdf
